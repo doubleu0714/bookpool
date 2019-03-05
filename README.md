@@ -1,2 +1,2 @@
-# sharethebook
+# bookpool
 ethereum dapp sample
