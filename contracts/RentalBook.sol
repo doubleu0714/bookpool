@@ -22,10 +22,107 @@ contract RentalBook {
 
 	// 대여 정보 전체를 저장하는 mapping
 	mapping(uint => RentalInfo) rentalInfoMap;
+	uint rentedCount = 0;
 
+	// 대여 계약시 발생되는 이벤트
 	event BorrowEvent(uint id);
-
+	// 계약 취소시 발생되는 이벤트
 	event CancelEvent(uint id);
+	// 수수료 변경시 발생되는 이벤트
+	event ChangeFeeEvent(string feeName, uint fee);
+
+	constructor () public {
+		// 초기데이터 적제
+		RentalInfo memory rentalInfo1;
+		rentalInfo1.id = ++idGenerator;
+		rentalInfo1.lender = msg.sender;
+		rentalInfo1.deposit = 1000000000000000000;
+		rentalInfo1.rentalFee = 1000000000000000000;
+		rentalInfo1.systemFee = 1000000000000000000;
+		rentalInfo1.isRented = false;
+		rentalInfoMap[rentalInfo1.id] = rentalInfo1;
+		// 초기데이터 적제
+		RentalInfo memory rentalInfo2;
+		rentalInfo2.id = ++idGenerator;
+		rentalInfo2.lender = msg.sender;
+		rentalInfo2.deposit = 1000000000000000000;
+		rentalInfo2.rentalFee = 1000000000000000000;
+		rentalInfo2.systemFee = 1000000000000000000;
+		rentalInfo2.isRented = false;
+		rentalInfoMap[rentalInfo2.id] = rentalInfo2;
+		// 초기데이터 적제
+		RentalInfo memory rentalInfo3;
+		rentalInfo3.id = ++idGenerator;
+		rentalInfo3.lender = msg.sender;
+		rentalInfo3.deposit = 1000000000000000000;
+		rentalInfo3.rentalFee = 1000000000000000000;
+		rentalInfo3.systemFee = 1000000000000000000;
+		rentalInfo3.isRented = false;
+		rentalInfoMap[rentalInfo3.id] = rentalInfo3;
+		// 초기데이터 적제
+		RentalInfo memory rentalInfo4;
+		rentalInfo4.id = ++idGenerator;
+		rentalInfo4.lender = msg.sender;
+		rentalInfo4.deposit = 1000000000000000000;
+		rentalInfo4.rentalFee = 1000000000000000000;
+		rentalInfo4.systemFee = 1000000000000000000;
+		rentalInfo4.isRented = false;
+		rentalInfoMap[rentalInfo4.id] = rentalInfo4;
+		// 초기데이터 적제
+		RentalInfo memory rentalInfo5;
+		rentalInfo5.id = ++idGenerator;
+		rentalInfo5.lender = msg.sender;
+		rentalInfo5.deposit = 1000000000000000000;
+		rentalInfo5.rentalFee = 1000000000000000000;
+		rentalInfo5.systemFee = 1000000000000000000;
+		rentalInfo5.isRented = false;
+		rentalInfoMap[rentalInfo5.id] = rentalInfo5;
+		// 초기데이터 적제
+		RentalInfo memory rentalInfo6;
+		rentalInfo6.id = ++idGenerator;
+		rentalInfo6.lender = msg.sender;
+		rentalInfo6.deposit = 1000000000000000000;
+		rentalInfo6.rentalFee = 1000000000000000000;
+		rentalInfo6.systemFee = 1000000000000000000;
+		rentalInfo6.isRented = false;
+		rentalInfoMap[rentalInfo6.id] = rentalInfo6;
+		// 초기데이터 적제
+		RentalInfo memory rentalInfo7;
+		rentalInfo7.id = ++idGenerator;
+		rentalInfo7.lender = msg.sender;
+		rentalInfo7.deposit = 1000000000000000000;
+		rentalInfo7.rentalFee = 1000000000000000000;
+		rentalInfo7.systemFee = 1000000000000000000;
+		rentalInfo7.isRented = false;
+		rentalInfoMap[rentalInfo7.id] = rentalInfo7;
+		// 초기데이터 적제
+		RentalInfo memory rentalInfo8;
+		rentalInfo8.id = ++idGenerator;
+		rentalInfo8.lender = msg.sender;
+		rentalInfo8.deposit = 1000000000000000000;
+		rentalInfo8.rentalFee = 1000000000000000000;
+		rentalInfo8.systemFee = 1000000000000000000;
+		rentalInfo8.isRented = false;
+		rentalInfoMap[rentalInfo8.id] = rentalInfo8;
+		// 초기데이터 적제
+		RentalInfo memory rentalInfo9;
+		rentalInfo9.id = ++idGenerator;
+		rentalInfo9.lender = msg.sender;
+		rentalInfo9.deposit = 1000000000000000000;
+		rentalInfo9.rentalFee = 1000000000000000000;
+		rentalInfo9.systemFee = 1000000000000000000;
+		rentalInfo9.isRented = false;
+		rentalInfoMap[rentalInfo9.id] = rentalInfo9;
+		// 초기데이터 적제
+		RentalInfo memory rentalInfo10;
+		rentalInfo10.id = ++idGenerator;
+		rentalInfo10.lender = msg.sender;
+		rentalInfo10.deposit = 1000000000000000000;
+		rentalInfo10.rentalFee = 1000000000000000000;
+		rentalInfo10.systemFee = 1000000000000000000;
+		rentalInfo10.isRented = false;
+		rentalInfoMap[rentalInfo10.id] = rentalInfo10;
+	}
 
 	/**
 	 * 책 등록시 호출되는 함수.
@@ -66,6 +163,7 @@ contract RentalBook {
 		// mapping에 저장된 책의 정보중 대여자와 대여여부값을 수정한다.
 		rentalInfoMap[_id].borrower = msg.sender;
 		rentalInfoMap[_id].isRented = true;
+		rentedCount++;
 
 		// 대출 EVENT 알림
 		emit BorrowEvent(rentalInfoMap[_id].id);
@@ -89,6 +187,7 @@ contract RentalBook {
 		rentalInfoMap[_id].borrower = address(0);
 		rentalInfoMap[_id].isRented = false;
 		uint refund = rentalInfoMap[_id].deposit + rentalInfoMap[_id].rentalFee;
+		rentedCount--;
 
 		// 계약 취소 "EVENT"
 		emit CancelEvent(rentalInfoMap[_id].id);
@@ -136,6 +235,7 @@ contract RentalBook {
 		address payable borrower = rentalInfoMap[_id].borrower;
 		rentalInfoMap[_id].borrower = address(0);
 		rentalInfoMap[_id].isRented = false;
+		rentedCount--;
 
 		// 대여 수수료를 대여자에게 지급한다.
 		msg.sender.transfer(rentalInfoMap[_id].rentalFee);
@@ -161,6 +261,7 @@ contract RentalBook {
 		rentalInfoMap[_id].borrower = address(0);
 		rentalInfoMap[_id].isRented = false;
 		uint refund = rentalInfoMap[_id].deposit + rentalInfoMap[_id].rentalFee;
+		rentedCount--;
 
 		// 대여 수수료 + 보증금을 대여자에게 지급한다.
 		msg.sender.transfer(refund);
@@ -187,6 +288,7 @@ contract RentalBook {
 		rentalInfoMap[_id].isRented = false;
 		uint amountToLender = _lateFee + rentalInfoMap[_id].rentalFee;
 		uint amountToBorrower = rentalInfoMap[_id].deposit - _lateFee;
+		rentedCount--;
 
 		// 대여 수수료 + 보증금을 대여자에게 지급한다.
 		msg.sender.transfer(amountToLender);
@@ -204,6 +306,7 @@ contract RentalBook {
 	 */
 	function setSystemFee(uint _systemFee) public {
 		SYSTEM_FEE = _systemFee;
+		emit ChangeFeeEvent("SYSTEM_FEE", SYSTEM_FEE);
 	}
 
 	/**
@@ -220,6 +323,7 @@ contract RentalBook {
 	 */
 	function setCancelFee(uint _cancelFee) public {
 		CANCEL_FEE = _cancelFee;
+		emit ChangeFeeEvent("CANCEL_FEE", CANCEL_FEE);
 	}
 
 	/**
@@ -238,5 +342,15 @@ contract RentalBook {
 		require(msg.sender == owner, "invalid msg.sender");
 
 		owner.transfer(address(this).balance);
+	}
+
+	function getRentedBook () public view returns(uint[] memory ids_) {
+		ids_ = new uint[](rentedCount);
+		uint rentedIdx = 0;
+		for(uint i = 0 ; i < idGenerator ; i++) {
+			if(rentalInfoMap[i].isRented) {
+				ids_[rentedIdx++] = i;
+			}
+		}
 	}
 }

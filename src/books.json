@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "isbn": "9788932965871",
+    "title": "고양이 1",
+    "publishedDate": "2018-05-30",
+    "author": "베르나르 베르베르",
+    "imgurl": "http://books.google.com/books/content?id=f5VdDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "systemfee": 1000000000000000000,
+    "rentalfee": 1000000000000000000,
+    "deposit": 1000000000000000000,
+    "latefee": 100000000000000000
+  },
+  {
+    "id": 2,
+    "isbn": "9788932902678",
+    "title": "개미(만화)",
+    "publishedDate": "2000-01-12",
+    "author": "베르나르베르베르",
+    "imgurl": "http://books.google.com/books/content?id=E0TKMgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "systemfee": 1000000000000000000,
+    "rentalfee": 1000000000000000000,
+    "deposit": 1000000000000000000,
+    "latefee": 100000000000000000
+  },
+  {
+    "id": 3,
+    "isbn": "9788989749226",
+    "title": "EXIT",
+    "author": "베르나르베르베르",
+    "publishedDate": "2003-01-28",
+    "imgurl": "http://books.google.com/books/content?id=WP3PMAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "systemfee": 1000000000000000000,
+    "rentalfee": 1000000000000000000,
+    "deposit": 1000000000000000000,
+    "latefee": 100000000000000000
+  },
+  {
+    "id": 4,
+    "isbn": "9788932906737",
+    "title":"뇌",
+    "author": "Bernard Werber",
+    "publishedDate": "2006",
+    "imgurl": "http://books.google.com/books/content?id=bIhuMQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "systemfee": 1000000000000000000,
+    "rentalfee": 1000000000000000000,
+    "deposit": 1000000000000000000,
+    "latefee": 100000000000000000
+  },
+  {
+    "id": 5,
+    "isbn": "9788932962344",
+    "title":"파라다이스 1",
+    "author": "베르나르 베르베르",
+    "publishedDate": "2013-07-25",
+    "imgurl": "http://books.google.com/books/content?id=yoEaCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "systemfee": 1000000000000000000,
+    "rentalfee": 1000000000000000000,
+    "deposit": 1000000000000000000,
+    "latefee": 100000000000000000
+  },
+  {
+    "id": 6,
+    "isbn": "9788932964270",
+    "title":"제3인류 5",
+    "author": "베르나르 베르베르",
+    "publishedDate": "2016-04-30",
+    "imgurl": "http://books.google.com/books/content?id=YosODAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "systemfee": 1000000000000000000,
+    "rentalfee": 1000000000000000000,
+    "deposit": 1000000000000000000,
+    "latefee": 100000000000000000
+  },
+  {
+    "id": 7,
+    "isbn": "9788932962337",
+    "title":"나무",
+    "author": "베르나르 베르베르",
+    "publishedDate": "2013-07-25",
+    "imgurl": "http://books.google.com/books/content?id=pYEaCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "systemfee": 1000000000000000000,
+    "rentalfee": 1000000000000000000,
+    "deposit": 1000000000000000000,
+    "latefee": 100000000000000000
+  },
+  {
+    "id": 8,
+    "isbn": "9788932962672",
+    "title":"신 1",
+    "author": "베르나르 베르베르",
+    "publishedDate": "2013-09-20",
+    "imgurl": "http://books.google.com/books/content?id=9oMaCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "systemfee": 1000000000000000000,
+    "rentalfee": 1000000000000000000,
+    "deposit": 1000000000000000000,
+    "latefee": 100000000000000000
+  },
+  {
+    "id": 9,
+    "isbn": "9788932962351",
+    "title":"파라다이스 2",
+    "author": "베르나르 베르베르",
+    "publishedDate": "2013-07-25",
+    "imgurl": "http://books.google.com/books/content?id=74EaCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "systemfee": 1000000000000000000,
+    "rentalfee": 1000000000000000000,
+    "deposit": 1000000000000000000,
+    "latefee": 100000000000000000
+  },
+  {
+    "id": 10,
+    "isbn": "9788932962573",
+    "title":"파피용",
+    "author": "베르나르 베르베르",
+    "publishedDate": "2013-09-01",
+    "imgurl": "http://books.google.com/books/content?id=qIIaCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "systemfee": 1000000000000000000,
+    "rentalfee": 1000000000000000000,
+    "deposit": 1000000000000000000,
+    "latefee": 100000000000000000
+  }
+]

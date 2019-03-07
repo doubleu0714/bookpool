@@ -18,5 +18,8 @@
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.4.0"
+  },
+  "dependencies": {
+    "fs-js": "^1.0.6"
   }
 }
