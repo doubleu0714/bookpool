@@ -296,7 +296,7 @@ App = {
     event.preventDefault();
 
     var dataId = parseInt($(event.target).data('id'));
-
+    var latefee = parseInt($(event.target).data('latefee'));
     var rentalBookInstance;
 
     web3.eth.getAccounts(function(error, accounts) {
@@ -310,7 +310,7 @@ App = {
         rentalBookInstance = instance;
 
         // Execute adopt as a transaction by sending account
-        return rentalBookInstance.returnedBookWithLateFee(dataId, {from: account});
+        return rentalBookInstance.returnedBookWithLateFee(dataId, latefee, {from: account});
       }).then(function(result) {
         return App.markRented();
       }).catch(function(err) {
